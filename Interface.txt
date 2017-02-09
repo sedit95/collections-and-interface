@@ -1,0 +1,64 @@
+ interface Canli {
+	 public void nefesAl();
+
+}
+interface Hayvan extends Canli{
+	public void avlan();
+	
+}
+interface Surungen extends Hayvan{
+	public void surun();
+	
+}
+class Tavsan implements Hayvan{
+
+	@Override
+	public void nefesAl() {
+		System.out.println("Nefes alýyorum.");
+		
+	}
+
+	@Override
+	public void avlan() {
+		System.out.println("Avlanýyorum.");
+		
+	}
+	
+}
+class Timsah implements Surungen {
+
+	@Override
+	public void avlan() {
+		
+		System.out.println("Avlanmýyorum.");
+	}
+
+	@Override
+	public void nefesAl() {
+		
+		System.out.println("Nefes alamýyorum.");
+	}
+
+	@Override
+	public void surun() {
+		
+		System.out.println("Sürünüyorum.");
+	}
+	
+}
+---------------------------------------------------
+public class HayvanDene {
+
+	public static void main(String[] args) {
+		
+Tavsan tavsan = new Tavsan();
+Timsah timsah = new Timsah();
+
+tavsan.avlan();
+
+timsah.nefesAl();
+
+
+	}
+
+}

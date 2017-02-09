@@ -1,0 +1,154 @@
+örnek1:
+import java.util.ArrayList;
+import java.util.ListIterator;
+
+public class ListeYapilari {
+public static void main(String args[]){
+	ArrayList arraylist = new ArrayList();
+	
+	arraylist.add(1);
+	arraylist.add(3);
+	arraylist.add(5);
+	
+	ListIterator i = arraylist.listIterator();
+	System.out.println("Baþtan sona tarýyoruz....");
+	while(i.hasNext()){
+		System.out.print(i.nextIndex()+ ".ncý eleman :");
+		System.out.println(i.next());
+	}
+	System.out.println("Sondan baþa tarýyoruz....");
+	while(i.hasPrevious()){
+		System.out.print(i.previousIndex()+ ".ncý eleman :");
+		System.out.println(i.previous());
+	}
+}
+}
+---------------------------------------------------------------------------
+örnek2:
+import java.util.ArrayList;
+import java.util.ListIterator;
+import java.util.ListIterator;
+
+public class ListeYapilari1 {
+	public static void main(String args[]){
+		ArrayList arraylist = new ArrayList();
+		
+		arraylist.add(1);
+		arraylist.add(2);  //  0 1 2 3 
+		arraylist.add(5);   // 1 2 3 4 
+		arraylist.add(2,3);
+		arraylist.add(3,4);
+		arraylist.add(6);
+		
+		System.out.print("DÝZÝNÝN TÜM ELEMANLARI : ");
+		System.out.println(arraylist);
+		System.out.print("LÝSTENÝN ÝNDÝS NUMARASI 5 OLAN ELEMANI : ");
+		System.out.println(arraylist.get(5));
+	}
+}
+---------------------------------------------------------------------------
+örnek3:
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+
+public class Map {
+	
+	public static void main(String args[]){
+		
+		HashMap hash = new HashMap();
+		
+		hash.put("Bir", 1);
+		hash.put("Ýki", 2);
+		hash.put("Üç", 3);
+		hash.put("Dört", 4);
+		hash.put("Beþ", 5);
+		
+		Set veri = hash.entrySet();
+		Set anahtar = hash.keySet();
+		
+		System.out.println("HashMap öðesinin verileri");
+		Iterator i = veri.iterator();
+		while(i.hasNext())
+			System.out.println(i.next());
+	        
+		System.out.println("HashMap öðesinin anahtarlarý");
+		Iterator it = anahtar.iterator();
+		while(it.hasNext())
+			System.out.println(it.next());
+	}
+}
+
+---------------------------------------------------------------------------
+örnek4:
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+public class abcd {
+	public static void main(String args[]){
+		
+		String dizi[]={"ali","veli","samet"};
+		LinkedHashSet<String> kume = new LinkedHashSet<String>();
+		for(String s : dizi){
+			boolean ekle = kume.add(s);
+			System.out.println(s+ " ");
+			
+		}
+		System.out.println();
+		System.out.println("sivas java jug");
+		
+		Iterator<String> iterator =kume.iterator();
+		while(iterator.hasNext()){
+			System.out.println(iterator.next()+ " ");
+		}
+	}
+
+}
+
+---------------------------------------------------------------------------
+örnek5:
+import java.util.*;
+
+public class SetOrnek1 {
+	public static void main(String args[]){
+		String[] a = {"caner","samet","mehmet","halil"};
+		boolean b;
+		HashSet hset=new HashSet();
+		for(String s : a){
+			b = hset.add(s);
+			if(!b)
+				System.out.println("kopya eleman bulundu : "+s);
+			
+		}
+	Iterator i = hset.iterator();
+	while(i.hasNext()){
+		System.out.println("Küme elemaný : "+ i.next());
+	}
+	}
+}
+
+---------------------------------------------------------------------------
+örnek6:
+
+import java.util.*;
+
+public class SetOrnek {
+public static void main(String args[]){
+	
+	HashSet hSet = new HashSet();
+	hSet.add("Ali");
+	hSet.add("Veli");
+	hSet.add("Ayþe");
+	hSet.add("Samet");
+	
+	//hSet.remove("Mehmet");
+	
+	Iterator i = hSet.iterator();
+	
+	while(i.hasNext()){
+		System.out.println("Küme elemanlarý : "+ i.next());
+		
+	}
+}
+}
+
+---------------------------------------------------------------------------
